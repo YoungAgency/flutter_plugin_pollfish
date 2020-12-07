@@ -36,12 +36,12 @@ class FlutterPollfish {
 
   Future<void> init(
       {String apiKey,
-      int pollfishPosition,
-      int indPadding,
-      bool rewardMode,
+        int pollfishPosition,
+        int indPadding,
+        bool rewardMode,
         bool releaseMode,
         bool offerwallMode,
-      String requestUUID}) async {
+        String requestUUID,}) async {
     assert(apiKey != null && apiKey.isNotEmpty);
 
     print(' invokeMethod FlutterPollfish.init()... ');
@@ -68,44 +68,41 @@ class FlutterPollfish {
   }
 
   Future _platformCallHandler(MethodCall call) async {
-    print(
-        "FlutterPollfish _platformCallHandler call ${call.method} ${call.arguments}");
-
     switch (call.method) {
-      case "pollfishSurveyReceived":
+      case "PollfishSurveyReceived":
         _pollfishReceivedSurveyListener(call.arguments);
         print("pollfishSurveyReceived");
 
         break;
 
-      case "pollfishSurveyCompleted":
+      case "PollfishSurveyCompleted":
         _pollfishCompletedSurveyListener(call.arguments);
         print("pollfishSurveyCompleted");
 
         break;
 
-      case "pollfishUserNotEligible":
+      case "PollfishUserNotEligible":
         _pollfishUserNotEligibleListener();
         print("pollfishUserNotEligible");
 
         break;
 
-      case "pollfishUserRejectedSurvey":
+      case "PollfishUserRejectedSurvey":
         _pollfishUserRejectedSurveyListener();
         print("pollfishUserRejectedSurvey");
 
         break;
-      case "pollfishSurveyOpened":
+      case "PollfishOpened":
         _pollfishSurveyOpenedListener();
         print("pollfishSurveyOpened");
 
         break;
-      case "pollfishSurveyClosed":
+      case "PollfishClosed":
         _pollfishSurveyClosedListener();
         print("pollfishSurveyClosedListener");
 
         break;
-      case "pollfishSurveyNotAvailable":
+      case "PollfishSurveyNotAvailable":
         _pollfishSurveyNotAvailableListener();
         print("pollfishSurveyNotAvailable");
 
@@ -117,32 +114,32 @@ class FlutterPollfish {
   }
 
   void setPollfishReceivedSurveyListener(
-          PollfishReceivedSurveyListener pollfishReceivedSurveyListener) =>
+      PollfishReceivedSurveyListener pollfishReceivedSurveyListener) =>
       _pollfishReceivedSurveyListener = pollfishReceivedSurveyListener;
 
   void setPollfishCompletedSurveyListener(
-          PollfishCompletedSurveyListener pollfishCompletedSurveyListener) =>
+      PollfishCompletedSurveyListener pollfishCompletedSurveyListener) =>
       _pollfishCompletedSurveyListener = pollfishCompletedSurveyListener;
 
   void setPollfishUserNotEligibleListener(
-          PollfishUserNotEligibleListener pollfishUserNotEligibleListener) =>
+      PollfishUserNotEligibleListener pollfishUserNotEligibleListener) =>
       _pollfishUserNotEligibleListener = pollfishUserNotEligibleListener;
 
   void setPollfishUserRejectedSurveyListener(
-          PollfishUserRejectedSurveyListener
-              pollfishUserRejectedSurveyListener) =>
+      PollfishUserRejectedSurveyListener
+      pollfishUserRejectedSurveyListener) =>
       _pollfishUserRejectedSurveyListener = pollfishUserRejectedSurveyListener;
 
   void setPollfishSurveyOpenedListener(
-          PollfishSurveyOpenedListener pollfishSurveyOpenedListener) =>
+      PollfishSurveyOpenedListener pollfishSurveyOpenedListener) =>
       _pollfishSurveyOpenedListener = pollfishSurveyOpenedListener;
 
   void setPollfishSurveyClosedListener(
-          PollfishSurveyClosedListener pollfishSurveyClosedListener) =>
+      PollfishSurveyClosedListener pollfishSurveyClosedListener) =>
       _pollfishSurveyClosedListener = pollfishSurveyClosedListener;
 
   void setPollfishSurveyNotAvailableSurveyListener(
-          PollfishSurveyNotAvailableListener
-              pollfishSurveyNotAvailableListener) =>
+      PollfishSurveyNotAvailableListener
+      pollfishSurveyNotAvailableListener) =>
       _pollfishSurveyNotAvailableListener = pollfishSurveyNotAvailableListener;
 }

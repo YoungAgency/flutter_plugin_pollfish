@@ -74,13 +74,13 @@ public class FlutterPollfishPlugin implements MethodCallHandler {
 
                 Log.d(TAG, "onPollfishSurveyReceived (CPA: " + surveyInfo.getSurveyCPA() + ", IR: " + String.valueOf(surveyInfo.getSurveyIR()) + ", LOI: " + String.valueOf(surveyInfo.getSurveyLOI()) + ", SurveyClass: " + String.valueOf(surveyInfo.getSurveyClass())  + ", RewardName: " + String.valueOf(surveyInfo.getRewardName())  + ", RewardValue: " + String.valueOf(surveyInfo.getRewardValue())+ ")");
 
-                channel.invokeMethod("pollfishSurveyReceived", String.valueOf(surveyInfo.getSurveyCPA()) + "," + String.valueOf(surveyInfo.getSurveyIR()) + "," + String.valueOf(surveyInfo.getSurveyLOI()) + "," + String.valueOf(surveyInfo.getSurveyClass()  + "," + String.valueOf(surveyInfo.getRewardName())  + "," + String.valueOf(surveyInfo.getRewardValue())));
+                channel.invokeMethod("PollfishSurveyReceived", String.valueOf(surveyInfo.getSurveyCPA()) + "," + String.valueOf(surveyInfo.getSurveyIR()) + "," + String.valueOf(surveyInfo.getSurveyLOI()) + "," + String.valueOf(surveyInfo.getSurveyClass()  + "," + String.valueOf(surveyInfo.getRewardName())  + "," + String.valueOf(surveyInfo.getRewardValue())));
 
                 }else{
 
                     Log.d(TAG, "onPollfishSurveyReceived");
 
-                    channel.invokeMethod("pollfishSurveyReceived", "");
+                    channel.invokeMethod("PollfishSurveyReceived", "");
                 }
             }
         };
@@ -94,13 +94,13 @@ public class FlutterPollfishPlugin implements MethodCallHandler {
 
                     Log.d(TAG, "onPollfishSurveyCompleted (CPA: " + surveyInfo.getSurveyCPA() + ", IR: " + String.valueOf(surveyInfo.getSurveyIR()) + ", LOI: " + String.valueOf(surveyInfo.getSurveyLOI()) + ", SurveyClass: " + String.valueOf(surveyInfo.getSurveyClass())  + ", RewardName: " + String.valueOf(surveyInfo.getRewardName())  + ", RewardValue: " + String.valueOf(surveyInfo.getRewardValue())+ ")");
 
-                    channel.invokeMethod("pollfishSurveyCompleted", String.valueOf(surveyInfo.getSurveyCPA()) + "," + String.valueOf(surveyInfo.getSurveyIR()) + "," + String.valueOf(surveyInfo.getSurveyLOI()) + "," + String.valueOf(surveyInfo.getSurveyClass()  + "," + String.valueOf(surveyInfo.getRewardName())  + "," + String.valueOf(surveyInfo.getRewardValue())));
+                    channel.invokeMethod("PollfishSurveyCompleted", String.valueOf(surveyInfo.getSurveyCPA()) + "," + String.valueOf(surveyInfo.getSurveyIR()) + "," + String.valueOf(surveyInfo.getSurveyLOI()) + "," + String.valueOf(surveyInfo.getSurveyClass()  + "," + String.valueOf(surveyInfo.getRewardName())  + "," + String.valueOf(surveyInfo.getRewardValue())));
 
                 }else{
 
                     Log.d(TAG, "onPollfishSurveyCompleted");
 
-                    channel.invokeMethod("pollfishSurveyCompleted", "");
+                    channel.invokeMethod("PollfishSurveyCompleted", "");
                 }
 
 
@@ -113,7 +113,7 @@ public class FlutterPollfishPlugin implements MethodCallHandler {
 
                 Log.d(TAG, "onPollfishOpened");
 
-                channel.invokeMethod("pollfishSurveyOpened", null);
+                channel.invokeMethod("PollfishOpened", null);
             }
         };
 
@@ -124,7 +124,7 @@ public class FlutterPollfishPlugin implements MethodCallHandler {
 
                 Log.d(TAG, "onPollfishClosed");
 
-                channel.invokeMethod("pollfishSurveyClosed", null);
+                channel.invokeMethod("PollfishClosed", null);
             }
         };
 
@@ -136,7 +136,7 @@ public class FlutterPollfishPlugin implements MethodCallHandler {
                         activity.runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                channel.invokeMethod("pollfishSurveyNotAvailable", null);
+                                channel.invokeMethod("PollfishSurveyNotAvailable", null);
                             }
                         });
             }
@@ -146,7 +146,7 @@ public class FlutterPollfishPlugin implements MethodCallHandler {
             public void onUserNotEligible() {
                 Log.d(TAG, "onUserNotEligible");
 
-                channel.invokeMethod("pollfishUserNotEligible", null);
+                channel.invokeMethod("PollfishUserNotEligible", null);
             }
         };
 
@@ -154,7 +154,7 @@ public class FlutterPollfishPlugin implements MethodCallHandler {
             public void onUserRejectedSurvey() {
                 Log.d(TAG, "onUserRejectedSurvey");
 
-                channel.invokeMethod("pollfishUserRejectedSurvey", null);
+                channel.invokeMethod("PollfishUserRejectedSurvey", null);
             }
         };
 

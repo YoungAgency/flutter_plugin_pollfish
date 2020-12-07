@@ -11,7 +11,7 @@ const String apiKey = '2ae349ab-30b8-4100-bc4d-b33b82e76519';
 const bool rewardMode = true;
 const int indPadding = 20;
 const int pollfishPosition = 5;
-const String requestUUID = null;
+const String requestUUID = "null";
 
 class MyApp extends StatefulWidget {
   @override

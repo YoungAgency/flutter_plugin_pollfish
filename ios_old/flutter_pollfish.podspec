@@ -17,3 +17,5 @@ A  Flutter plugin for rendering Pollfish surveys within an app
   s.ios.deployment_target = '9.0'
   s.static_framework = true
 end
+
+
